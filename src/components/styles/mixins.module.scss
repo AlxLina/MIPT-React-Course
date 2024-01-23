@@ -1,0 +1,35 @@
+@import '/src/components/styles/variables.module.scss';
+
+@mixin fontPrimary($size: 24px) {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: $size;
+}
+
+@mixin cardSettings($border-radius: 16px, $max-width: 500px, $padding: 20px){
+    border-radius: $border-radius;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 5% auto;
+    max-width: $max-width;
+    padding: $padding;
+    position: relative;
+}
+
+@mixin counter(){
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 2px solid $comments_color;
+    color: #0f115f;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    margin: 0 20px 0 auto;
+    min-width: 30px;
+    padding: 0 20px;
+    right: 20px;
+    top: 20px;
+    transition: all 0.3s ease;
+}
+

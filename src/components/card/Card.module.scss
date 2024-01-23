@@ -1,0 +1,70 @@
+@import '/src/components/styles/variables.module.scss';
+@import '../styles/mixins.module.scss';
+
+.card {
+    background-color: $card_color;
+    @include cardSettings();
+    h2 {
+        color: rgb(0, 0, 0);
+        @include fontPrimary();
+        margin-bottom: 10px;
+        text-align: center;
+        text-transform: uppercase;  
+    }
+    h3 {
+        color: rgb(95, 116, 160);
+        @include fontPrimary(18px);
+        margin-bottom: 40px;
+        text-align: center;
+    }
+}
+
+.likesCounter {
+    @include counter();
+    @include fontPrimary(16px);
+    &:hover{
+        background-color: $comments_color;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+.heart {
+    display: flex;
+    flex-direction: row;
+}
+
+.whiteLike::before {
+    content: "🤍";
+    font-size: $font_like;
+}
+
+.like::before {
+    content: "❤️";
+    font-size: $font_like;
+}
+
+.boxComment{
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 0;
+}
+
+.titleComment{
+    margin: 0px;
+    @include fontPrimary(18px);
+    color: rgb(34, 57, 105);
+}
+
+.checkComments{
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    background-color: $comments_color;
+    @include fontPrimary(14px);
+}
+
+button {
+    border: none;
+    background-color: $card_color;
+}

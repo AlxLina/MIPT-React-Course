@@ -1,0 +1,18 @@
+@import '/src/components/styles/variables.module.scss';
+@import '../styles/mixins.module.scss';
+
+.comment{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+}
+
+.author{
+    @include fontPrimary(18px);
+    padding: 20px 0 0 20px;
+}
+
+.text{
+    padding:  20px;
+}
