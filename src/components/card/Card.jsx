@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
-import styles from './Card.module.scss';
-import { getComments } from "../get_comments_by_article";
 import { Comment } from "../comments/Comments";
+import { getComments } from "../get_comments_by_article";
+import styles from './Card.module.scss';
+
 
 export function Card(props) {
         const { post } = props;
@@ -46,9 +47,15 @@ export function Card(props) {
             <div className = {styles.card}>
               <h2>{post.title}</h2>
               <h3>{post.text}</h3>
-              <div className={styles.likesCounter}>Лайки : {likes}</div>
-              <button className={isLiked ? (styles.like) : (styles.whiteLike)} onClick={changeLikes}></button>
-              <div>{!isLiked}</div>
+              <picture>
+                <div className={styles.pic}>
+                  <img src={post.image} width="500px"></img>
+                </div>
+              </picture>
+              <div className={styles.box_like}>
+                <button className={isLiked ? (styles.like) : (styles.whiteLike)} onClick={changeLikes}></button>
+                <div className={styles.likesCounter}>{likes}</div>
+              </div>
               <div className={styles.boxComment}>
                 <div className={styles.titleComment}>Комментарии : {post.commentsCount}</div>
                 <button className={styles.checkComments} onClick={showComments}>
@@ -59,6 +66,7 @@ export function Card(props) {
                   {comments && isShowComments &&
                     comments.map((comment) => <Comment comment={comment}></Comment>)}
                 </div>
+                <div className={styles.date}>{post.date}</div>
             </div>
           );
         }

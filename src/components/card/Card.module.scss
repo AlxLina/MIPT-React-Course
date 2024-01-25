@@ -1,6 +1,9 @@
 @import '/src/components/styles/variables.module.scss';
 @import '../styles/mixins.module.scss';
 
+body{
+    background-image: url(https://bogatyr.club/uploads/posts/2023-07/1688571424_bogatyr-club-p-oblaka-tekstura-foni-pinterest-30.jpg);
+}
 .card {
     background-color: $card_color;
     @include cardSettings();
@@ -19,14 +22,13 @@
     }
 }
 
+.box_like{
+    display: flex;
+    flex-direction: row;
+}
 .likesCounter {
     @include counter();
     @include fontPrimary(16px);
-    &:hover{
-        background-color: $comments_color;
-        color: #fff;
-        cursor: pointer;
-    }
 }
 
 .heart {
@@ -35,13 +37,11 @@
 }
 
 .whiteLike::before {
-    content: "🤍";
-    font-size: $font_like;
+    @include nolike();
 }
 
 .like::before {
-    content: "❤️";
-    font-size: $font_like;
+    @include like();
 }
 
 .boxComment{
@@ -67,4 +67,9 @@
 button {
     border: none;
     background-color: $card_color;
+}
+
+.date{
+    @include fontPrimary(16px);
+    color: rgb(34, 57, 105);
 }

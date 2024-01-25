@@ -17,19 +17,24 @@
 
 @mixin counter(){
     align-items: center;
-    background-color: #fff;
-    border-radius: 10px;
-    border: 2px solid $comments_color;
     color: #0f115f;
-    position: absolute;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     height: 30px;
-    margin: 0 20px 0 auto;
-    min-width: 30px;
-    padding: 0 20px;
-    right: 20px;
-    top: 20px;
-    transition: all 0.3s ease;
+    margin: 10px 5px 0px 0;
+    max-width: 50px;
+    width: 100%;
+    padding: 5px 0;
 }
+
+@mixin nolike($font_like: 38px){
+    content: "🤍";
+    font-size: $font_like;
+}
+
+@mixin like($font_like: 38px){
+    content: "❤️";
+    font-size: $font_like;
+}
+    
 

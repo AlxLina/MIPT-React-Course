@@ -2,31 +2,43 @@
     {
       "author": "Sofa",
       "articleId": 33,
-      "text": "Comment comment comment"
+      "text": "Просто потрясающая белкА-летягА! Как удивительно видеть такое чудесное создание в полёте.😍✨🙌",
+      "currentLikes": 7,
+      "date": "2022-09-14 08:14"
     },
     {
       "author": "Ivan",
       "articleId": 5,
-      "text": "Random text from Ivan"
+      "text": "Сейчас переслушаем))",
+      "currentLikes": 0,
+      "date": "2020-03-15 12:36"
     },
     {
       "author": "Oleg",
       "articleId": 5,
-      "text": "Long text long text long text long text long text long text lorem"
+      "text": "Легендарный альбом 15 года",
+      "currentLikes": 10,
+      "date": "2021-07-12 16:40"
     },
     {
       "author": "Roman",
       "articleId": 33,
-      "text": "Short text"
+      "text": "Прекрасная белка-летяга! Завораживающее зрелище!",
+      "currentLikes": 2,
+      "date": "2022-06-07 19:48"
     },
     {
       "author": "Bob",
       "articleId": 16,
-      "text": "Short text from Bob"
+      "text": "Прелестный котик, не могу устоять 😽",
+      "currentLikes": 99,
+      "date": "2020-10-08 06:42"
     },
     {
       "author": "Roman",
       "articleId": 11,
-      "text": "Short text from Frank + random random random"
+      "text": "Илон Маск, как белка-летяга, всегда находит выход из любой ситуации!",
+      "currentLikes": 17,
+      "date": "2021-09-03 16:04"
     }
   ]

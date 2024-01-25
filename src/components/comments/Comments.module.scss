@@ -6,6 +6,20 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.box_text{
+    display: flex;
+    flex-direction: column;
+}
+
+.box_like{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .author{
@@ -16,3 +30,28 @@
 .text{
     padding:  20px;
 }
+
+.likesCounter {
+    @include fontPrimary(16px);
+}
+.whiteLike{
+    background-color: white;
+    &:before{
+        @include nolike(24px);
+        background-color: white;
+    }
+}
+
+.like{
+    background-color: white;
+    &:before{
+        @include like(24px);
+        background-color: white;
+    }
+}
+
+.date{
+    @include fontPrimary(12px);
+    padding:  5px 20px;
+}
+
