@@ -11,14 +11,16 @@ body{
         color: rgb(0, 0, 0);
         @include fontPrimary();
         margin-bottom: 10px;
-        text-align: center;
-        text-transform: uppercase;  
+        text-align: left;
+        text-transform: uppercase;
+        margin: 5px 0;
+        max-width: 400px;  
     }
     h3 {
         color: rgb(95, 116, 160);
         @include fontPrimary(18px);
         margin-bottom: 40px;
-        text-align: center;
+        text-align: left;
     }
 }
 
@@ -53,7 +55,7 @@ body{
 .titleComment{
     margin: 0px;
     @include fontPrimary(18px);
-    color: rgb(34, 57, 105);
+    color: $blue;
 }
 
 .checkComments{
@@ -71,5 +73,74 @@ button {
 
 .date{
     @include fontPrimary(16px);
-    color: rgb(34, 57, 105);
+    color: $blue;
+}
+
+.edit{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &_button{
+        justify-self: right;
+        font-size: 20px;
+    }
+    &_box{
+        padding: 0;
+        margin: 5px;
+    }
+    &_text{
+        font-size: 20px;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+    }
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding: 5px;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.submit_title{
+    font-size: 20px;
+}
+
+.dropdown{
+    position: relative;
+    margin: 0 20px;
+    max-width: 100px;
+    @include fontPrimary(12px);
+    p{
+        border: 2px solid;
+        padding: 10px;
+        max-width: 80px;
+        text-align: center;
+    }
+    button{
+        background-color: $card_color;
+    }
+    &_content{
+        position: absolute;
+        background-color: white;
+        display: none;
+        position: absolute;
+        box-shadow: 0px 8px 16px 0px rgba($color: #000000, $alpha: 0.2);
+    }
+    &:hover{
+        .dropdown_content{
+            top: 40px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            button{
+                @include fontPrimary(12px);
+                padding: 10px 38px;
+            }
+        }
+    }
 }

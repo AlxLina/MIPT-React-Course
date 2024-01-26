@@ -1,23 +1,44 @@
 import React, {useState, useEffect} from 'react'
 import {Card} from './components/card/Card.jsx';
-import './App.css';
+import styles from './App.module.scss';
 import {getArticles} from './components/get-articles.jsx';
 
 function App() {
-  // Здесь приведен пример использования useEffect
-// для реализации запроса после маунтинга по аналогии с componentDidMount
-    const [data, setData] = useState(null)
+    const [data, setData] = useState(null);
+    const [sorting, setSorting] = useState("date");
 
     useEffect(() => {
         getArticles().then(fetchedData => setData(fetchedData))
     }, [])
 
+    const changeSortLikes = () =>{
+      setSorting("currentLikes");
+    }
+
+    const changeSortDate = () =>{
+      setSorting("date");
+    }
+
+    function sortMethod(sort){
+      return (a, b) => (a[sort] > b[sort] ? -1 : 1)
+    }
 
     return (
-      <>
-        {data &&
-          data.map((post) => <Card post={post} key={post.articleId}></Card>)}
-      </>
+      <div>
+      <div className={styles.header}>
+        <div className={styles.dropdown}>
+          <p>сортировать</p>
+          <div className={styles.dropdown_content}>
+            <button onClick={changeSortLikes}>по лайкам</button>{" "}
+            <button onClick={changeSortDate}>по дате</button>
+          </div>
+        </div>
+      </div>
+      {data &&
+        data
+          .sort(sortMethod(sorting))
+          .map((post) => <Card post={post} key={post.articleId}></Card>)}
+    </div>
     );
 }
 
